@@ -1,9 +1,6 @@
 package employeetech.com.employee.manager.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import  java.io.Serializable;
 
@@ -11,6 +8,7 @@ import  java.io.Serializable;
 public class Employee implements  Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false)
 
     private Long id;
     private String email;

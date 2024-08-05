@@ -85,6 +85,18 @@ public class Employee implements  Serializable {
         this.employeeCode = employeeCode;
 
     }
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", title='" + title + '\'' +
+                ", phone='" + phone + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", employeeCode='" + employeeCode + '\'' +
+                '}';
+    }
 
 
 }

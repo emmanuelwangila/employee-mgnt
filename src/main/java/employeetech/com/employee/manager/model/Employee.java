@@ -54,4 +54,29 @@ public class Employee implements  Serializable {
         this.email = email;
     }
 
+    public String getTitle(){
+        return  title;
+    }
+
+    public void setTitle(String title){
+        this.title = title;
+    }
+
+    public String getPhone(){
+        return phone;
+    }
+
+    public void setPhone(String phone){
+        this.phone = phone;
+
+    }
+    public String getImageUrl(){
+        return imageUrl;
+    }
+
+    public  void setImageUrl(String imageUrl){
+        this.imageUrl = imageUrl;
+    }
+
+
 }

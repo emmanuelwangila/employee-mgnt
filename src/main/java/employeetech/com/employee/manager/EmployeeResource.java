@@ -35,14 +35,14 @@ public class EmployeeResource {
 
     @PostMapping("/add")
     public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee){
-        Employee new_employee = employeeService.addEmployee(new Employee());
-        return  new ResponseEntity<>(new_employee, HttpStatus.CREATED);
+        Employee newEmployee = employeeService.addEmployee(employee);
+        return  new ResponseEntity<>(newEmployee, HttpStatus.CREATED);
     }
 
     @PutMapping("/update")
     public ResponseEntity<Employee> updateEmployee( @RequestBody Employee employee){
-        Employee update_employee = employeeService.updateEmployee(employee);
-        return  new ResponseEntity<>(update_employee, HttpStatusCode.valueOf(200));
+        Employee updateEmployee = employeeService.updateEmployee(employee);
+        return  new ResponseEntity<>(updateEmployee, HttpStatusCode.valueOf(200));
 
     }
 

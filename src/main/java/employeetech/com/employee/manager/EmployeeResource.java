@@ -3,6 +3,7 @@ package employeetech.com.employee.manager;
 
 import employeetech.com.employee.manager.model.Employee;
 import employeetech.com.employee.manager.service.EmployeeService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,9 +34,9 @@ public class EmployeeResource {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Employee> addEmployee(){
-        Employee employee = employeeService.addEmployee(new Employee());
-        return  new ResponseEntity<>(employee, HttpStatusCode.valueOf(200));
+    public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee){
+        Employee new_employee = employeeService.addEmployee(new Employee());
+        return  new ResponseEntity<>(new_employee, HttpStatus.CREATED);
     }
 
 }

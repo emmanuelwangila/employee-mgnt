@@ -3,8 +3,13 @@ package employeetech.com.employee.manager;
 
 import employeetech.com.employee.manager.model.Employee;
 import employeetech.com.employee.manager.service.EmployeeService;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/employee")
@@ -14,6 +19,13 @@ public class EmployeeResource {
 
     public EmployeeResource(EmployeeService employeeService){
         this.employeeService = employeeService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Employee>> getAllEmployees(){
+        List<Employee> employees = employeeService.findAllEmployees();
+        return  new ResponseEntity<>(employees , HttpStatusCode.valueOf(200));
+
     }
 
 }

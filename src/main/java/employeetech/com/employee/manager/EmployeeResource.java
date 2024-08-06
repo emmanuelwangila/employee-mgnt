@@ -5,10 +5,7 @@ import employeetech.com.employee.manager.model.Employee;
 import employeetech.com.employee.manager.service.EmployeeService;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,6 +29,12 @@ public class EmployeeResource {
     @GetMapping("find/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable("id")  Long id){
        Employee employee = employeeService.findEmployeeById( id);
+        return  new ResponseEntity<>(employee, HttpStatusCode.valueOf(200));
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity<Employee> addEmployee(){
+        Employee employee = employeeService.addEmployee(new Employee());
         return  new ResponseEntity<>(employee, HttpStatusCode.valueOf(200));
     }
 

@@ -15,7 +15,7 @@ public class EmployeeManagerApplication {
 	@Bean
 	public CorsFilter corsFilter(){
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
-
+        corsConfiguration.setAllowCredentials(true);
 
 	}
 

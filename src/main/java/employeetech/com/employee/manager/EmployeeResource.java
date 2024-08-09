@@ -39,7 +39,7 @@ public class EmployeeResource {
         return  new ResponseEntity<>(newEmployee, HttpStatus.CREATED);
     }
 
-    @PutMapping("/update")
+    @PutMapping("/update/{id}")
     public ResponseEntity<Employee> updateEmployee( @RequestBody Employee employee){
         Employee updateEmployee = employeeService.updateEmployee(employee);
         return  new ResponseEntity<>(updateEmployee, HttpStatusCode.valueOf(200));

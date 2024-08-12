@@ -41,5 +41,29 @@ public class Student implements Serializable {
         this.name = name;
     }
 
+    public String getEmail (){
+        return  email;
+    }
+
+    public void  setEmail( String email){
+        this.email = email;
+    }
+
+    public Number getAge (){
+        return age;
+    }
+
+    public void setAge(Number age){
+        this.age = age;
+    }
+
+    public String getCourse(){
+        return  course;
+    }
+
+    public void setCourse(String course){
+        this.course = course;
+    }
+
 
 }

@@ -18,26 +18,31 @@ public class StudentResource {
 
     public StudentResource(StudentService studentService) {this.studentService =  studentService;}
 
+    @GetMapping("/all")
     public ResponseEntity<List<Student>> findAllStudents (){
         List<Student> students = studentService.findAllStudents();
         return  new ResponseEntity<>(students , HttpStatusCode.valueOf(200));
     }
 
+    @GetMapping("/id")
     public ResponseEntity<Student> getStudentById(@PathVariable("id") Long id){
         Student student = studentService.getStudentById(id);
         return  new ResponseEntity<>( student , HttpStatusCode.valueOf(200));
     }
 
+    @PutMapping("/update")
     public ResponseEntity<Student> updateStudents (@RequestBody Student student){
         Student updatedStudent = studentService.updateStudent( student );
         return  new ResponseEntity<>( updatedStudent , HttpStatusCode.valueOf(200));
     }
 
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteStudents(@PathVariable("id") Long id ){
         studentService.deleteStudent(id);
         return  new ResponseEntity<>(HttpStatusCode.valueOf(200));
     }
 
+    @PostMapping("/add")
     public ResponseEntity<Student> addStudents(@RequestBody Student student){
         Student addedStudents = studentService.addStudent(student);
         return  new ResponseEntity<>(addedStudents, HttpStatusCode.valueOf(200));

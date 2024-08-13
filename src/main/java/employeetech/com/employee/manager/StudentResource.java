@@ -37,4 +37,9 @@ public class StudentResource {
         studentService.deleteStudent(id);
         return  new ResponseEntity<>(HttpStatusCode.valueOf(200));
     }
+
+    public ResponseEntity<Student> addStudents(@RequestBody Student student){
+        Student addedStudents = studentService.addStudent(student);
+        return  new ResponseEntity<>(addedStudents, HttpStatusCode.valueOf(200));
+    }
 }

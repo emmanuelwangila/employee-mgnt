@@ -32,4 +32,9 @@ public class StudentResource {
         Student updatedStudent = studentService.updateStudent( student );
         return  new ResponseEntity<>( updatedStudent , HttpStatusCode.valueOf(200));
     }
+
+    public ResponseEntity<?> deleteStudents(@PathVariable("id") Long id ){
+        studentService.deleteStudent(id);
+        return  new ResponseEntity<>(HttpStatusCode.valueOf(200));
+    }
 }

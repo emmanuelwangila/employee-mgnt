@@ -12,11 +12,12 @@ public class Company implements Serializable {
     @GeneratedValue(strategy =  GenerationType.AUTO)
     @Column(nullable = false , updatable = false)
 
-    public String name;
-    public String location;
-    public Number branches;
-    public String phone;
-    public Boolean debt;
+    private Long id;
+    private String name;
+    private String location;
+    private Number branches;
+    private String phone;
+    private Boolean debt;
 
     public Company () {}
 

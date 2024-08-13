@@ -11,6 +11,12 @@ import org.springframework.stereotype.Service;
 @Transactional
 public class StudentService {
 
+    private final StudentRepo studentRepo;
+
+    public StudentService(StudentRepo studentRepo) {this.studentRepo = studentRepo;}
+
+
+
 
 
 }

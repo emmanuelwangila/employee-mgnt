@@ -15,6 +15,8 @@ public class StudentService {
 
     private final StudentRepo studentRepo;
 
+//    for dependency  Injection
+    @Autowired
     public StudentService(StudentRepo studentRepo) {this.studentRepo = studentRepo;}
 
     public Student addStudent (Student student) {

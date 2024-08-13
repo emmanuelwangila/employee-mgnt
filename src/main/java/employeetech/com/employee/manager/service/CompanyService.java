@@ -19,7 +19,8 @@ public class CompanyService {
         return  companyRepo.save(company);
    }
 
-   public Company getCompanyById(Long id){
-        return  companyRepo.findById(id)
-                .orElseThrow(() -> new RuntimeException   ("Company not found"));
+   public Company getCompanyById(Long id) {
+       return companyRepo.findById(id)
+               .orElseThrow(() -> new RuntimeException("Company not found"));
+   }
 }

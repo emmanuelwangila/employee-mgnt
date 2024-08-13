@@ -23,4 +23,8 @@ public class StudentService {
           return  studentRepo.findById(id)
                   .orElseThrow(() -> new RuntimeException( "Student is not found"));
      }
+
+     public Student updateStudent(Student student ){
+          return  studentRepo.save(student);
+     }
 }

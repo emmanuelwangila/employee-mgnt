@@ -3,6 +3,7 @@ package employeetech.com.employee.manager.service;
 
 import employeetech.com.employee.manager.repo.StudentRepo;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 public class StudentService {
       public  final StudentRepo studentRepo;
 
+      @Autowired
       public  StudentService(StudentRepo studentRepo) { this.studentRepo = studentRepo;}
 
 }

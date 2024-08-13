@@ -27,4 +27,8 @@ public class CompanyService {
    public Company updateCompany (Company company){
         return  companyRepo.save(company);
    }
+
+   public void deleteCompany(Long id){
+         companyRepo.deleteById(id);
+   }
 }

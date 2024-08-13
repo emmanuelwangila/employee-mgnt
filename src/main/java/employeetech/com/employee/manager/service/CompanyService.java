@@ -14,4 +14,8 @@ public class CompanyService {
    public List<Company> getAllCompanies (){
         return  companyRepo.findAll();
    }
+
+   public Company addCompany (Company company){
+        return  companyRepo.save(company);
+   }
 }

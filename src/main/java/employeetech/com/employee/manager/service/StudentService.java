@@ -1,6 +1,7 @@
 package employeetech.com.employee.manager.service;
 
 
+import employeetech.com.employee.manager.model.Student;
 import employeetech.com.employee.manager.repo.StudentRepo;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,5 +14,9 @@ public class StudentService {
 
       @Autowired
       public  StudentService(StudentRepo studentRepo) { this.studentRepo = studentRepo;}
+
+    public Student addStudent( Student student ){
+          return new Student( )
+    }
 
 }

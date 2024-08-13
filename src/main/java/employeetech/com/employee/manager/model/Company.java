@@ -47,4 +47,17 @@ public class Company implements Serializable {
     public String getPhone (){
         return  phone;
     }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Number getBranches() {
+        return branches;
+    }
+
+    public void setBranches(Number branches) {
+        this.branches = branches;
+    }
+
 }

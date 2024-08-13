@@ -18,4 +18,8 @@ public class CompanyService {
    public Company addCompany (Company company){
         return  companyRepo.save(company);
    }
+
+   public Company getCompanyById(Long id){
+        return  companyRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException   ("Company not found"));
 }

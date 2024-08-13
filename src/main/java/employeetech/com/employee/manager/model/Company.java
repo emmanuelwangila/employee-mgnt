@@ -60,4 +60,12 @@ public class Company implements Serializable {
         this.branches = branches;
     }
 
+    public Boolean getDebt (){
+        return  debt;
+    }
+
+    public void setDebt(Boolean debt){
+        this.debt = debt;
+    }
+
 }

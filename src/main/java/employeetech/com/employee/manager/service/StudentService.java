@@ -16,7 +16,7 @@ public class StudentService {
       public  StudentService(StudentRepo studentRepo) { this.studentRepo = studentRepo;}
 
     public Student addStudent( Student student ){
-          return new Student( )
+          return studentRepo.save(student);
     }
 
 }

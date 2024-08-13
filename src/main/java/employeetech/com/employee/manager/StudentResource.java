@@ -4,6 +4,7 @@ package employeetech.com.employee.manager;
 import employeetech.com.employee.manager.model.Student;
 import employeetech.com.employee.manager.service.EmployeeService;
 import employeetech.com.employee.manager.service.StudentService;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,8 @@ public class StudentResource {
 
     public StudentResource(StudentService studentService) {this.studentService =  studentService;}
 
-
-
+    public ResponseEntity<List<Student>> findAllStudents (){
+        List<Student> students = studentService.findAllStudents();
+        return  new ResponseEntity<>(students , HttpStatusCode.valueOf(200));
+    }
 }

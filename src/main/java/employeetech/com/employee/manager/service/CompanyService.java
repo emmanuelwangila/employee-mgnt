@@ -3,6 +3,7 @@ package employeetech.com.employee.manager.service;
 import employeetech.com.employee.manager.model.Company;
 import employeetech.com.employee.manager.repo.CompanyRepo;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +14,8 @@ public class CompanyService {
 
     private final CompanyRepo companyRepo;
 
+//    for dependency injection
+    @Autowired
     public CompanyService(CompanyRepo companyRepo ) {this.companyRepo = companyRepo;}
 
    public List<Company> getAllCompanies (){

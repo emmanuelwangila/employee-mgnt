@@ -15,5 +15,10 @@ import java.util.List;
 @RequestMapping("/api/students")
 public class StudentResource {
 
+    private final StudentService studentService;
+
+    public StudentResource(StudentService studentService) {this.studentService =  studentService;}
+
+
 
 }

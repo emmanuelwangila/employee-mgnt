@@ -23,4 +23,8 @@ public class CompanyService {
        return companyRepo.findById(id)
                .orElseThrow(() -> new RuntimeException("Company not found"));
    }
+
+   public Company updateCompany (Company company){
+        return  companyRepo.save(company);
+   }
 }

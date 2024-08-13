@@ -10,27 +10,6 @@ import org.springframework.stereotype.Service;
 @Service
 @Transactional
 public class StudentService {
-      public  final StudentRepo studentRepo;
-
-      @Autowired
-      public  StudentService(StudentRepo studentRepo) { this.studentRepo = studentRepo;}
-
-    public Student addStudent( Student student ){
-          return studentRepo.save(student);
-    }
-
-     public Student getStudentById(Long id){
-          return  studentRepo.findById(id)
-                  .orElseThrow(() -> new RuntimeException( "Student is not found"));
-     }
-
-     public Student updateStudent(Student student ){
-          return  studentRepo.save(student);
-     }
-
-     public void deleteStudent (Long id ){
-           studentRepo.deleteById(id);
-     }
 
 
 

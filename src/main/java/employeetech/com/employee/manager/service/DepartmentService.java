@@ -27,4 +27,8 @@ public class DepartmentService {
     public List<Department> findAllDepartments (){
         return  departmentRepo.findAll();
     }
+
+    public Department updateDepartment ( Department department){
+        return  departmentRepo.save(department);
+    }
 }

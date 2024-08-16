@@ -9,29 +9,28 @@ import java.util.List;
 public class Department {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    @Column(nullable = false , updatable = false)
     private Long id;
 
-    @Column(nullable = false , unique = true)
+    @Column(nullable = false, unique = true)
     private String name;
 
-    @OneToMany( mappedBy = "department", cascade = CascadeType.ALL)
-    private List<Employee> employees;
+    @OneToMany( mappedBy = "department" , cascade = CascadeType.ALL)
+    private List<Employee> employees ;
 
-    public Department department () {
-        return null;
-    }
+    public Department () {}
 
-    public Department(String name) {
+    public Department (String name){
         this.name = name;
+
     }
 
     public String getName(){
         return  name;
     }
 
-    public void setName(String name){
+    public void setName( String name){
         this.name = name;
     }
-
 }

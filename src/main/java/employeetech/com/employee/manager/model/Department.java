@@ -2,11 +2,12 @@ package employeetech.com.employee.manager.model;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "departments")
-public class Department {
+public class Department implements Serializable {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)

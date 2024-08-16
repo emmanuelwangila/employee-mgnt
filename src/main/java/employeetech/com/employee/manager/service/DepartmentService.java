@@ -1,5 +1,6 @@
 package employeetech.com.employee.manager.service;
 
+import employeetech.com.employee.manager.model.Department;
 import employeetech.com.employee.manager.repo.DepartmentRepo;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,5 +16,9 @@ public class DepartmentService {
     @Autowired
     public DepartmentService( DepartmentRepo departmentRepo) {
         this.departmentRepo = departmentRepo;
+    }
+
+    public Department addDepartment (Department department){
+        return  departmentRepo.save(department);
     }
 }

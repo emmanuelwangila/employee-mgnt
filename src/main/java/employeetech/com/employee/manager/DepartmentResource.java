@@ -36,4 +36,11 @@ public class DepartmentResource {
         Department updatedDepartment = departmentService.updateDepartment(department);
         return  new ResponseEntity<>(updatedDepartment , HttpStatusCode.valueOf(200));
     }
+
+
+    @DeleteMapping("/delete/${id}")
+    public ResponseEntity<?> deleteDepartment (@PathVariable Long id){
+        departmentService.deleteDepartment(id);
+        return new ResponseEntity<>(HttpStatusCode.valueOf(200));
+    }
 }

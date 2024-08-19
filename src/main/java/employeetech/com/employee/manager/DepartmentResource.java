@@ -5,9 +5,7 @@ import employeetech.com.employee.manager.model.Department;
 import employeetech.com.employee.manager.service.DepartmentService;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +23,11 @@ public class DepartmentResource {
     public ResponseEntity<List<Department>> getAllDepartments (){
         List<Department> departments = departmentService.findAllDepartments();
         return new ResponseEntity<>(departments , HttpStatusCode.valueOf(200));
+    }
+
+    @PostMapping("/add")
+    public  ResponseEntity<Department> addDepartment(@RequestBody Department department){
+        Department newDepartment = departmentService.addDepartment(department);
+        return  new ResponseEntity<>(newDepartment , HttpStatusCode.valueOf(200));
     }
 }

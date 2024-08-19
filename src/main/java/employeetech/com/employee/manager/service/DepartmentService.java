@@ -31,4 +31,8 @@ public class DepartmentService {
     public Department updateDepartment ( Department department){
         return  departmentRepo.save(department);
     }
+
+    public void  deleteDepartment(Long id){
+        departmentRepo.deleteById(id);
+    }
 }

@@ -23,4 +23,12 @@ public class Payroll implements Serializable {
     private Double salary;
 
     private LocalDate payDate;
+
+    public Payroll () {}
+
+    public Payroll(Double salary , LocalDate payDate, Employee employee){
+        this.salary = salary;
+        this.payDate = payDate;
+        this.employee = employee;
+    }
 }

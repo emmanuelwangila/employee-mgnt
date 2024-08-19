@@ -47,4 +47,8 @@ public class Payroll implements Serializable {
     public void setSalary(Double salary) {
         this.salary = salary;
     }
+
+    public LocalDate getPayDate (){
+        return payDate;
+    }
 }

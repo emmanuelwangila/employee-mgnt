@@ -11,6 +11,10 @@ public class Employee implements  Serializable {
     @Column(nullable = false, updatable = false)
 
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
     private String email;
     private String title;
     private  String phone;
@@ -85,6 +89,15 @@ public class Employee implements  Serializable {
         this.employeeCode = employeeCode;
 
     }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +

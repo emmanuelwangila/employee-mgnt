@@ -39,4 +39,12 @@ public class Payroll implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public Double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
 }

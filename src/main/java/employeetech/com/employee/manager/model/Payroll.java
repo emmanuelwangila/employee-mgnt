@@ -51,4 +51,12 @@ public class Payroll implements Serializable {
     public LocalDate getPayDate (){
         return payDate;
     }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
 }

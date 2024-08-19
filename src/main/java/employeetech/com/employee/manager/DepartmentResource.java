@@ -30,4 +30,10 @@ public class DepartmentResource {
         Department newDepartment = departmentService.addDepartment(department);
         return  new ResponseEntity<>(newDepartment , HttpStatusCode.valueOf(200));
     }
+
+    @PutMapping("/update")
+    public  ResponseEntity<Department> updateDepartment(@RequestBody Department department){
+        Department updatedDepartment = departmentService.updateDepartment(department);
+        return  new ResponseEntity<>(updatedDepartment , HttpStatusCode.valueOf(200));
+    }
 }

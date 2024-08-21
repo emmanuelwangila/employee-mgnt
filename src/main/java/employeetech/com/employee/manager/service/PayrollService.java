@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class PayrollService {
 
     @Autowired
-    private PayrollRepo payrollRepo;
+    private final PayrollRepo payrollRepo;
 
-    public PayrollService (PayrollRepo payrollRepo) {}
+    public PayrollService (PayrollRepo payrollRepo) {
+        this.payrollRepo = payrollRepo;
+    }
 }

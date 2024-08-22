@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("payrolls")
 public class PayrollResource {
@@ -19,8 +21,9 @@ public class PayrollResource {
     }
 
     @GetMapping("/all")
-    public Payroll getAllPayrolls(Payroll payroll){
-        payrollService.getAllPayrolls(payroll);
-        return new ResponseEntity<>( HttpStatusCode.valueOf(200) )
+    public  ResponseEntity <List<Payroll>> getAllPayrolls(){
+        List<Payroll> payrolls = payrollService.getAllPayrolls(new Payroll());
+        return  new ResponseEntity<>(payrolls , HttpStatusCode.valueOf(200));
     }
+
 }

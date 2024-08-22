@@ -16,4 +16,8 @@ public class PayrollService {
     public Payroll addNewPayroll(Payroll payroll){
         return payrollRepo.save(payroll);
     }
+
+    public Payroll updatePayroll(Payroll payroll){
+        return payrollRepo.save(payroll);
+    }
 }

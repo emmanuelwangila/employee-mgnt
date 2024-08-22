@@ -38,10 +38,5 @@ public class PayrollResource {
         return  new ResponseEntity<>(updatedPayroll , HttpStatusCode.valueOf(200));
     }
 
-    @DeleteMapping("/delete")
-    public ResponseEntity<?> deletePayrolls(@RequestParam Long id){
-        payrollService.DeletePayrolls(id);
-
-    }
 
 }

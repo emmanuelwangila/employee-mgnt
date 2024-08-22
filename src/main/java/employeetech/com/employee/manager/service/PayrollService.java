@@ -4,6 +4,8 @@ import employeetech.com.employee.manager.model.Payroll;
 import employeetech.com.employee.manager.repo.PayrollRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 public class PayrollService {
 
     @Autowired
@@ -19,5 +21,9 @@ public class PayrollService {
 
     public Payroll updatePayroll(Payroll payroll){
         return payrollRepo.save(payroll);
+    }
+
+    public List<Payroll> getAllPayrolls(Payroll payroll){
+        return payrollRepo.findAll();
     }
 }

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
+@RequestMapping("payrolls")
 public class PayrollResource {
 
     private final PayrollService payrollService;
@@ -35,6 +37,12 @@ public class PayrollResource {
     public ResponseEntity<Payroll> updatePayrolls(@RequestBody Payroll payroll){
         Payroll updatedPayroll = payrollService.updatePayroll(payroll);
         return  new ResponseEntity<>( updatedPayroll , HttpStatusCode.valueOf(200));
+    }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<?> deletePayrolls (@PathVariable("id") Long id){
+        payrollService.DeletePayrolls(id);
+        return new ResponseEntity<>( HttpStatusCode.valueOf(200));
     }
 
 

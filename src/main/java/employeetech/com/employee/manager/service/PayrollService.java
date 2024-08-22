@@ -2,10 +2,15 @@ package employeetech.com.employee.manager.service;
 
 import employeetech.com.employee.manager.model.Payroll;
 import employeetech.com.employee.manager.repo.PayrollRepo;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 
+@Service
+@Transactional
 public class PayrollService {
 
     @Autowired

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("payrolls")
 public class PayrollResource {
 
-    private PayrollService payrollService;
+    private final PayrollService payrollService;
 
     public  PayrollResource(PayrollService payrollService){
         this.payrollService = payrollService;

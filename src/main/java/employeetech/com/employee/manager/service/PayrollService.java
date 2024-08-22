@@ -28,7 +28,7 @@ public class PayrollService {
         return payrollRepo.save(payroll);
     }
 
-    public List<Payroll> getAllPayrolls(Payroll payroll){
+    public List<Payroll> getAllPayrolls(){
         return payrollRepo.findAll();
     }
 

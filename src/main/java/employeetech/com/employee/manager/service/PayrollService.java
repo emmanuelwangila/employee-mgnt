@@ -26,4 +26,8 @@ public class PayrollService {
     public List<Payroll> getAllPayrolls(Payroll payroll){
         return payrollRepo.findAll();
     }
+
+    public void DeletePayrolls(Long id){
+        payrollRepo.deleteById(id);
+    }
 }

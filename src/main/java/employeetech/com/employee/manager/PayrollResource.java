@@ -6,9 +6,7 @@ import employeetech.com.employee.manager.service.PayrollService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,6 +29,12 @@ public class PayrollResource {
     public ResponseEntity<Payroll>  addAllPayrolls (@RequestBody Payroll payroll){
         Payroll addedPayroll = payrollService.addNewPayroll(payroll);
         return  new ResponseEntity<>(addedPayroll , HttpStatus.CREATED);
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity<Payroll> updatePayrolls(@RequestBody Payroll payroll){
+        Payroll updatedPayroll = payrollService.updatePayroll(payroll);
+        return  new ResponseEntity<>( updatedPayroll , HttpStatusCode.valueOf(200));
     }
 
 

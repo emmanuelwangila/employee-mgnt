@@ -33,7 +33,7 @@ public class PayrollResource {
         return  new ResponseEntity<>(addedPayroll , HttpStatus.CREATED);
     }
 
-    @PutMapping("/update")
+    @PutMapping("/update/{id}")
     public ResponseEntity<Payroll> updatePayrolls(@RequestBody Payroll payroll){
         Payroll updatedPayroll = payrollService.updatePayroll(payroll);
         return  new ResponseEntity<>( updatedPayroll , HttpStatusCode.valueOf(200));

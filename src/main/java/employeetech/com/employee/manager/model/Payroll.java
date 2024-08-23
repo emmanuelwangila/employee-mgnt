@@ -15,7 +15,7 @@ public class Payroll implements Serializable {
 
     private Long id;
 
-    @ManyToOne
+    @ManyToOne( fetch =  FetchType.LAZY  , optional = false)
     @JoinColumn(name = "employee_id" , nullable = false)
     private Employee employee;
 

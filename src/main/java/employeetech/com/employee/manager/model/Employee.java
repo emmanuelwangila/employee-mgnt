@@ -25,8 +25,9 @@ public class Employee implements  Serializable {
 
     public Employee () {}
 
-    public  Employee(String name, String email , String title , String phone , String imageUrl, String employeeCode){
+    public  Employee(String name,  String email , String title , String phone , String imageUrl, String employeeCode){
         this.name = name;
+
         this.email = email;
         this.title = title;
         this.employeeCode = employeeCode;

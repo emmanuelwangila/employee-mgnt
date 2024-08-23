@@ -27,7 +27,7 @@ public class PayrollResource {
 
     }
 
-    @PostMapping("/add ")
+    @PostMapping("/add")
     public ResponseEntity<Payroll>  addAllPayrolls (@RequestBody Payroll payroll){
         Payroll addedPayroll = payrollService.addNewPayroll(payroll);
         return  new ResponseEntity<>(addedPayroll , HttpStatus.CREATED);

@@ -39,7 +39,7 @@ public class PayrollResource {
         return  new ResponseEntity<>( updatedPayroll , HttpStatusCode.valueOf(200));
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deletePayrolls (@PathVariable("id") Long id){
         payrollService.DeletePayrolls(id);
         return new ResponseEntity<>( HttpStatusCode.valueOf(200));

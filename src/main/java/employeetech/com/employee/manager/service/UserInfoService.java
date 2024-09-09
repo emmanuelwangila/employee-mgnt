@@ -20,4 +20,8 @@ public class UserInfoService {
         return  userRepo.save(user);
     }
 
+    public User findByUsername( String username) {
+        return  userRepo.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+    }
+
 }

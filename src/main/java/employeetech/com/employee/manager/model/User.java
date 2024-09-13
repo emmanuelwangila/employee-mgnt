@@ -1,8 +1,11 @@
 package employeetech.com.employee.manager.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import jakarta.persistence.*;
+import jdk.jfr.DataAmount;
 
 @Entity
+@JsonPOJOBuilder
 @Table(name = "users")
 
 public class User {

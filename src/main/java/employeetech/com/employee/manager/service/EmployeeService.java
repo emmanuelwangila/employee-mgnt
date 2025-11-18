@@ -2,6 +2,8 @@ package employeetech.com.employee.manager.service;
 
 import employeetech.com.employee.manager.model.Employee;
 import employeetech.com.employee.manager.repo.EmployeeRepo;
+
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,9 +31,12 @@ public class EmployeeService {
         return employeeRepo.findAll();
     }
 
-    public Employee updateEmployee(Employee employee){
-        return employeeRepo.save(employee);
-
+     public Employee updateEmployee(Long id, Employee employeeDetails) {
+        return employeeRepo.findById(id).map(employee -> {
+            // copy properties from incoming object but preserve id and employeeCode
+            BeanUtils.copyProperties(employeeDetails, employee, "id", "employeeCode");
+            return employeeRepo.save(employee);
+        }).orElse(null);
     }
 
     public Employee findEmployeeById(Long id){

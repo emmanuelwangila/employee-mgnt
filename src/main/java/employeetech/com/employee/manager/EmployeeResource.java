@@ -39,12 +39,16 @@ public class EmployeeResource {
         return  new ResponseEntity<>(newEmployee, HttpStatus.CREATED);
     }
 
+   // ...existing code...
     @PutMapping("/update/{id}")
-    public ResponseEntity<Employee> updateEmployee( @RequestBody Employee employee){
-        Employee updateEmployee = employeeService.updateEmployee(employee);
-        return  new ResponseEntity<>(updateEmployee, HttpStatusCode.valueOf(200));
-
+    public ResponseEntity<Employee> updateEmployee(@PathVariable("id") Long id, @RequestBody Employee employee){
+        Employee updatedEmployee = employeeService.updateEmployee(id, employee);
+        if (updatedEmployee == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
     }
+// ...existing code...
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteEmployee(@PathVariable("id") Long id){

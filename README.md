@@ -20,7 +20,7 @@ This project is a microservices-based Employee Management system built using Spr
 - Distributed Tracing and Monitoring
 
 ## Technologies Used
-- **Java**: The primary programming language
+- **Kotlin**: The primary programming language
 - **Spring Boot**: Framework for building microservices
 - **Spring Cloud**: Tools for microservice architecture
 - **Spring Data JPA**: For database access
@@ -41,7 +41,8 @@ The application is structured into several microservices, each responsible for a
 
 ## Getting Started
 ### Prerequisites
-- Java 11 or higher
+- Kotlin 1.9 or higher
+- Java 17 or higher (required by Spring Boot 3.x)
 - Maven
 - Docker
 

@@ -6,7 +6,7 @@ import java.io.Serializable
 @Entity
 @Table(name = "addresses")
 data class Address(
-    @Id
+    @Idcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
 

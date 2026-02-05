@@ -1,0 +1,34 @@
+package employeetech.com.employee.manager.service;
+
+import employeetech.com.employee.manager.model.Department;
+import employeetech.com.employee.manager.repo.DepartmentRepo;
+import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+@Transactional
+public class DepartmentService {
+    private final DepartmentRepo departmentRepo;
+
+    public DepartmentService(DepartmentRepo departmentRepo) {
+        this.departmentRepo = departmentRepo;
+    }
+
+    public Department addDepartment(Department department) {
+        return departmentRepo.save(department);
+    }
+
+    public List<Department> findAllDepartments() {
+        return departmentRepo.findAll();
+    }
+
+    public Department updateDepartment(Department department) {
+        return departmentRepo.save(department);
+    }
+
+    public void deleteDepartment(Long id) {
+        departmentRepo.deleteById(id);
+    }
+}
